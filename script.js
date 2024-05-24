@@ -88,11 +88,24 @@ function generateCalendar(){
 
                     // Dodanie detektora zdarzeń dla kliknięcia prawym przyciskiem myszy w celu usunięcia zadania
                     taskElement.addEventListener("contextmenu", function(event){
-                        event.preventDefault();
-                        deleteTask(taskElement);
-                    })
+                        event.preventDefault(); // Zapobieganie domyślnemu menu kontekstowemu
+                        deleteTask(taskElement); // Wywołanie funkcji deleteTask
+                    });
+
+                    // Dodanie detektora zdarzeń dla zwykłego kliknięcia w celu edycji zadania
+                    taskElement.addEventListener('click', function(){
+                        editTask(taskElement); // Wywołanie funkcji editTask
+                    });
+
+                    // Dołącz element zadania do elementu dnia
+                    day.appendChild(taskElement);
+                    break;
                 }
             }
+            closeAddTaskModal(); // Zamknij okno dodawania zadania
+        }else{
+            // Alert w przypadku nieprawidłowej daty lub opisu zadania
+            alert("Wprowadź prawidłową datę i opis zadania!");
         }
     }
 
