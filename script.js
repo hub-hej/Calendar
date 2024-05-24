@@ -34,14 +34,14 @@ function generateCalendar(){
         daySquare.id = `day-${day}`;
         calendar.appendChild(daySquare);
     }
-
+}
     // Funkcja wyświetlająca okno dodawania zadania 
     function showAddTaskModal(){
-        document.getElementById('add-task-modal').style.display = 'block';
+        document.getElementById('addTaskModal').style.display = 'block';
     }
     // Funkcja zamykająca okno modalne dodawania zadania
     function closeAddTaskModal(){
-        document.getElementById('add-task-modal').style.display = 'none';
+        document.getElementById('addTaskModal').style.display = 'none';
     }
     // Funkcja usuwania zadania
     function deleteTask(taskElement){
@@ -108,5 +108,3 @@ function generateCalendar(){
             alert("Wprowadź prawidłową datę i opis zadania!");
         }
     }
-
-}
